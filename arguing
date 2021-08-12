@@ -1,0 +1,64 @@
+#!/bin/bash
+#
+# Simple demo script with arguments
+# Run this script with the names of one or more people
+
+
+if ! [[ $1 =~ [a-z] ]] ; then
+	echo "Hi, Please pass me your name as an argument and try again"
+	exit 
+
+else
+
+#[[ $1 == '[a-z]*' ]] || echo $1 does not start with a letter!
+
+
+echo "Hello $1 how are you"
+echo "the entire arg list is $*"
+echo $10
+shift
+echo "\$1 is now called $1"
+echo "the entire arg list is now $*"
+echo "Hello $2 how are you"
+
+echo Hello ${10}
+# script that shows how arguments are handled:
+echo "\$* gives $*"
+
+echo "\$# gives $#"
+
+echo "\$@ gives $@"
+
+echo "\$0 is $0"
+
+# Showing the interpretation of \$*
+
+for i in "$*"
+do
+	echo $i
+done
+
+# showing the interpretation of \$@
+for j in "$@"
+do
+	echo $j
+done
+
+# Script that shows how to make sure that user input is provided
+
+if [ -z $1 ]
+then
+	echo provide filenames
+	read FILENAMES
+else
+	FILENAMES="$@"
+fi
+
+echo the following filesnames have been provided: $FILENAMES
+
+fi
+
+exit 0
+
+
+

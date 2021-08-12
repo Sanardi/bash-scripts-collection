@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# this script copies /var/log contents and clears current contents of the file
+# Usage: ./clearlogssanardi
+
+LOGFILE=/var/log/messages 
+
+sudo cp $LOGFILE $LOGFILE.old
+cp $LOGFILE $LOGFILE.$(date +%d-%m-%y)
+
+cat /dev/null > /var/log/messages
+
+echo log file copied and cleared up
+
+exit 0

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# this script asks you which process you'd like to kill and kills it
+# Usage: ./sanardikils
+
+echo "Which process would you like to kill?"
+
+read TOKILL
+
+kill $(ps aux | grep $TOKILL | grep -v grep | awk '{ print$2 }' ) 
+
+echo sanardi killed the process for you
+
+exit 0

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#this is a test script
+
+# Usage: ./hello
+
+clear
+echo 'Hello World'
+
+exit 0
